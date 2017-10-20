@@ -210,11 +210,16 @@
 \newdateformat{DTUDate}{\THEDAY.\THEMONTH.\THEYEAR}
 
 % Customize blocks
-\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamertemplate{blocks}[rounded][shadow=false]
 \setbeamercolor{block title}{fg=white,bg=dtudarkgrey}
 \setbeamerfont{block title}{series=\bfseries\large}
-\setbeamercolor{block body}{fg=white,bg=dtugrey}
-
+\setbeamercolor{block body}{fg=white,bg=dtulightgrey}
+\pgfdeclareverticalshading[black,bg]{bmb@shadow}{200cm}{%
+  color(0bp)=(dtudarkergrey!25); color(4bp)=(black!50!bg); color(8bp)=(black!50!bg)}
+\pgfdeclareradialshading[black,bg]{bmb@shadowball}{\pgfpointorigin}{%
+  color(0bp)=(black!50!bg); color(4bp)=(dtudarkergrey!25)}
+\pgfdeclareradialshading[black,bg]{bmb@shadowballlarge}{\pgfpointorigin}{%
+  color(0bp)=(black!50!bg); color(4bp)=(black!50!bg); color(8bp)=(dtudarkergrey!25)}
 
 \newcommand{\defaultDTUFrameStyle}{
 \setbeamercolor{background canvas}{bg=dtudarkergrey}
